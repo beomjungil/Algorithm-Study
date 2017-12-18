@@ -1,7 +1,7 @@
 const NeedlemanWunsch = (str1, str2) => {
 
     // Set Scores
-    const MatchScore = 2, GapScore = -2, MissScore = -1, gc = '-';
+    const MatchScore = 2, GapScore = -2, MissScore = -3, gc = '-';
 
     // Generate grid matrixay
     let matrix = [], i, j, str1Length, str2Length;
@@ -59,7 +59,7 @@ const NeedlemanWunsch = (str1, str2) => {
 
         answer = Math.max(upperCell, Math.max(sideCell, diagonalCell));
 
-        switch (str2[str2Length - 1] === str1[str1Length - 1] ? diagonalCell : answer) {
+        switch (answer) {
             case upperCell: {
                 sq1.push(str1[str1Length - 1]);
                 sq2.push(gc);
