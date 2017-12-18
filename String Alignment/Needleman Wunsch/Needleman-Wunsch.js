@@ -22,9 +22,9 @@ const NeedlemanWunsch = (str1, str2) => {
 
     // Init First row, col
     for (j = 1; j <= str2Length; j++) {
-        matrix[0][j] = GapScore << j - 1; // x * y == x << y-1 (Shift is Faster!)
+        matrix[0][j] = GapScore * j;
         for (i = 1; i <= str1Length; i++) {
-            matrix[i][0] = GapScore << i - 1;
+            matrix[i][0] = GapScore * i;
         }
     }
 
